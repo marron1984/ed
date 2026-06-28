@@ -12,7 +12,12 @@ export function SiteFooter() {
       <div className="container-page py-12">
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div>
-            <p className="text-base font-black">メンズケア オンライン診療</p>
+            <p className="text-base font-black">
+              DHP CARE
+              <span className="ml-2 text-xs font-bold text-white/60">
+                for MEN&apos;S HEALTH
+              </span>
+            </p>
             <p className="mt-2 text-sm text-white/70">
               株式会社dhpケアマネジメント
             </p>

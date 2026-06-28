@@ -10,7 +10,7 @@ const notoSansJp = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "オンライン診療モック | 誰にも知られず、最短で、自信を取り戻す",
+  title: "DHP CARE for MEN'S HEALTH（デモ）| 誰にも知られず、最短で、自信を取り戻す",
   description:
     "メンズヘルス（ED治療薬）オンライン診療サービスのデモ用モックサイトです。実際の診療・販売は行いません。",
 };

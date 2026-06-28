@@ -98,7 +98,7 @@ export function ConsultationWizard() {
           <Link href="/" className="flex items-center gap-2 text-navy">
             <HeartPulse className="h-5 w-5 text-teal" />
             <span className="text-sm font-black">
-              メンズケア オンライン診療
+              DHP CARE
               <span className="ml-2 text-[10px] font-bold text-gold">DEMO</span>
             </span>
           </Link>

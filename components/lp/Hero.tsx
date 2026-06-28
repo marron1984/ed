@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/Button";
+import { ShowcaseImage } from "@/components/ui/ShowcaseImage";
 import { ShieldCheck, Clock, Lock } from "lucide-react";
 
 const badges = [
@@ -18,19 +19,22 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-navy/5 blur-3xl"
       />
-      <div className="container-page relative grid gap-10 py-16 sm:py-24 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p className="mb-4 inline-block rounded-full bg-white px-4 py-1.5 text-xs font-bold text-teal shadow-card">
-            メンズヘルス オンライン診療
+      <h1 className="sr-only">
+        誰にも知られず、最短で、自信を取り戻す。スマホで完結するメンズヘルスのオンライン診療。
+      </h1>
+      <div className="container-page relative grid gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
+        <div className="order-2 lg:order-1">
+          <p className="mb-4 inline-block rounded-full bg-white px-4 py-1.5 text-xs font-bold tracking-wide text-teal shadow-card">
+            DHP CARE for MEN&apos;S HEALTH
           </p>
-          <h1 className="text-3xl font-black leading-tight text-navy sm:text-4xl lg:text-5xl">
-            誰にも知られず、
+          <p className="text-2xl font-black leading-snug text-navy sm:text-3xl">
+            通院せず、スマホひとつで。
             <br className="hidden sm:block" />
-            最短で、自信を取り戻す。
-          </h1>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-navy/70 sm:text-base">
-            スマホで完結するオンライン問診。通院の手間や人目を気にすることなく、
-            医師に相談するための最初の一歩を、落ち着いた環境で踏み出せます。
+            医師に相談できるオンライン診療。
+          </p>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-navy/70 sm:text-base">
+            人目や通院の手間を気にすることなく、医師に相談するための最初の一歩を、
+            落ち着いた環境で踏み出せます。医師があなたに合った内容をご提案します。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <ButtonLink href="/consultation" size="lg">
@@ -50,18 +54,15 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-navy-light shadow-soft">
-            <div className="flex h-full flex-col items-center justify-center gap-4 p-8 text-center text-white/90">
-              <ShieldCheck className="h-14 w-14 text-gold-light" />
-              <p className="text-lg font-bold">安心して相談できる場所を</p>
-              <p className="max-w-xs text-sm text-white/70">
-                （イメージ画像のプレースホルダー）
-                <br />
-                清潔感のある medical × consumer なトーン
-              </p>
-            </div>
-          </div>
+        <div className="order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-none">
+          <ShowcaseImage
+            src="/images/hero.png"
+            alt="誰にも知られず、最短で、自信を取り戻す — DHP CARE for MEN'S HEALTH のオンライン診療"
+            width={1122}
+            height={1402}
+            priority
+            sizes="(max-width: 1024px) 100vw, 520px"
+          />
         </div>
       </div>
     </section>

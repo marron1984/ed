@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ShowcaseImage } from "@/components/ui/ShowcaseImage";
 import { flowSteps } from "@/data/lp";
 
 export function Flow() {
@@ -10,27 +11,33 @@ export function Flow() {
           title="サービスの流れ"
           description="お申し込みからお届け、継続フォローまで。スマホひとつで進められます。"
         />
-        <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {flowSteps.map((step, index) => (
-            <li key={step.step} className="relative">
-              <div className="flex h-full flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-                <span className="text-sm font-black text-gold">{step.step}</span>
-                <h3 className="mt-2 font-bold text-navy">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy/70">
-                  {step.description}
-                </p>
-              </div>
-              {index < flowSteps.length - 1 && (
-                <span
-                  aria-hidden
-                  className="absolute right-2 top-1/2 hidden -translate-y-1/2 text-2xl text-teal/40 lg:block"
-                >
-                  →
+        <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
+          <ShowcaseImage
+            src="/images/flow-smartphone.png"
+            alt="スマホひとつで、すべて完結。オンライン問診 約3分、医師による診察、お薬を自宅へ。"
+            width={1122}
+            height={1402}
+            className="mx-auto w-full max-w-md lg:max-w-none"
+          />
+          <ol className="space-y-4">
+            {flowSteps.map((step) => (
+              <li
+                key={step.step}
+                className="flex gap-4 rounded-2xl border border-navy/10 bg-white p-5 shadow-card"
+              >
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-navy text-sm font-black text-gold-light">
+                  {step.step}
                 </span>
-              )}
-            </li>
-          ))}
-        </ol>
+                <div>
+                  <h3 className="font-bold text-navy">{step.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-navy/70">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );
