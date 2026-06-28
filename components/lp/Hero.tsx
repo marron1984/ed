@@ -1,5 +1,4 @@
 import { ButtonLink } from "@/components/ui/Button";
-import { ShowcaseImage } from "@/components/ui/ShowcaseImage";
 import { ShieldCheck, Clock, Lock } from "lucide-react";
 
 const badges = [
@@ -54,15 +53,22 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-none">
-          <ShowcaseImage
-            src="/images/hero.png"
-            alt="誰にも知られず、最短で、自信を取り戻す — DHP CARE for MEN'S HEALTH のオンライン診療"
-            width={1122}
-            height={1402}
-            priority
-            sizes="(max-width: 1024px) 100vw, 520px"
-          />
+        <div className="order-1 w-full lg:order-2">
+          <div className="overflow-hidden rounded-2xl bg-navy shadow-soft ring-1 ring-navy/5">
+            <video
+              className="aspect-video h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster="/images/hero.png"
+              aria-label="DHP CARE for MEN'S HEALTH の紹介動画"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+              お使いのブラウザは動画の再生に対応していません。
+            </video>
+          </div>
         </div>
       </div>
     </section>
