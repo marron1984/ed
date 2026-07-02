@@ -5,7 +5,7 @@ export function DoneStep() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-mist px-5 py-16">
       <div className="w-full max-w-lg rounded-2xl border border-navy/10 bg-white p-8 text-center shadow-soft sm:p-12">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
+        <div className="pop-in mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
           <CheckCircle2 className="h-9 w-9 text-teal" />
         </div>
         <h1 className="mt-6 text-2xl font-black text-navy">

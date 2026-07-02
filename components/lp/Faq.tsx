@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
 import { faqItems } from "@/data/faq";
 import { ChevronDown } from "lucide-react";
 import { clsx } from "@/lib/clsx";
@@ -12,14 +13,17 @@ export function Faq() {
   return (
     <section className="bg-mist py-16 sm:py-24" id="faq">
       <div className="container-narrow">
-        <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
+        <Reveal>
+          <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
+        </Reveal>
         <div className="mt-10 space-y-3">
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
             return (
-              <div
+              <Reveal
                 key={item.question}
-                className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-card"
+                delay={index * 70}
+                className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-card transition-shadow hover:shadow-soft"
               >
                 <button
                   type="button"
@@ -40,7 +44,7 @@ export function Faq() {
                     {item.answer}
                   </div>
                 )}
-              </div>
+              </Reveal>
             );
           })}
         </div>

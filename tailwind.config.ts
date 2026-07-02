@@ -41,6 +41,24 @@ const config: Config = {
         xl: "1rem",
         "2xl": "1.5rem",
       },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-18px)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(12px, 16px)" },
+        },
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        float: "float 7s ease-in-out infinite",
+        "float-slow": "float-slow 11s ease-in-out infinite",
+        shimmer: "shimmer 2.2s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { pricingPlans } from "@/data/pricing";
 import { Check } from "lucide-react";
 import { clsx } from "@/lib/clsx";
@@ -8,17 +9,20 @@ export function Pricing() {
   return (
     <section className="bg-mist py-16 sm:py-24" id="pricing">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="PRICING"
-          title="料金プラン"
-          description="価格は明朗に表示しています。定期プランはいつでも休止・解約が可能です。"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="PRICING"
+            title="料金プラン"
+            description="価格は明朗に表示しています。定期プランはいつでも休止・解約が可能です。"
+          />
+        </Reveal>
         <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
-          {pricingPlans.map((plan) => (
-            <div
+          {pricingPlans.map((plan, index) => (
+            <Reveal
               key={plan.id}
+              delay={index * 120}
               className={clsx(
-                "relative flex flex-col rounded-2xl bg-white p-8 shadow-card",
+                "relative flex flex-col rounded-2xl bg-white p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-soft",
                 plan.highlighted && "ring-2 ring-teal"
               )}
             >
@@ -63,7 +67,7 @@ export function Pricing() {
               >
                 このプランで問診を始める
               </ButtonLink>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

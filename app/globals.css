@@ -24,3 +24,82 @@ body {
     @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
   }
 }
+
+/* スクロール連動の登場アニメーション */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-zoom[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* 問診ステップ切り替え時の登場 */
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.step-content {
+  animation: stepIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.pop-in {
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 動きを控えたいユーザーへの配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .step-content,
+  .pop-in {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal-zoom {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-float,
+  .animate-float-slow,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}

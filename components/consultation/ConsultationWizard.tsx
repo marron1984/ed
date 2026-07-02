@@ -115,7 +115,7 @@ export function ConsultationWizard() {
           <h1 className="text-xl font-black text-navy sm:text-2xl">
             {stepTitles[step]}
           </h1>
-          <div className="mt-6">
+          <div key={step} className="step-content mt-6">
             {step === 0 && <IntroStep />}
             {step === 1 && <BasicStep state={state} dispatch={dispatch} />}
             {step === 2 && <LifestyleStep state={state} dispatch={dispatch} />}

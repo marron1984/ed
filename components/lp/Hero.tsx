@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { ShieldCheck, Clock, Lock } from "lucide-react";
 
 const badges = [
@@ -12,17 +13,17 @@ export function Hero() {
     <section className="relative overflow-hidden bg-gradient-to-b from-mist to-white">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal/10 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 animate-float rounded-full bg-teal/10 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-navy/5 blur-3xl"
+        className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 animate-float-slow rounded-full bg-navy/5 blur-3xl"
       />
       <h1 className="sr-only">
         誰にも知られず、最短で、自信を取り戻す。スマホで完結するメンズヘルスのオンライン診療。
       </h1>
       <div className="container-page relative grid gap-10 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <div className="order-2 lg:order-1">
+        <Reveal className="order-2 lg:order-1">
           <p className="mb-4 inline-block rounded-full bg-white px-4 py-1.5 text-xs font-bold tracking-wide text-teal shadow-card">
             DHP CARE for MEN&apos;S HEALTH
           </p>
@@ -51,9 +52,9 @@ export function Hero() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="order-1 w-full lg:order-2">
+        <Reveal variant="zoom" delay={120} className="order-1 w-full lg:order-2">
           <div className="overflow-hidden rounded-2xl bg-navy shadow-soft ring-1 ring-navy/5">
             <video
               className="aspect-video h-full w-full object-cover"
@@ -69,7 +70,7 @@ export function Hero() {
               お使いのブラウザは動画の再生に対応していません。
             </video>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
