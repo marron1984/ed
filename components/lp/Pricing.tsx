@@ -47,6 +47,11 @@ export function Pricing() {
                 <span className="text-sm font-bold text-navy">円</span>
                 <span className="ml-1 text-xs text-navy/60">{plan.unit}</span>
               </div>
+              {plan.id === "subscription" && (
+                <p className="mt-1 text-xs font-bold text-teal">
+                  1日あたり 約{Math.round(plan.price / 30)}円（30日換算）
+                </p>
+              )}
               <ul className="mt-6 flex-1 space-y-3">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-navy/80">
@@ -70,6 +75,9 @@ export function Pricing() {
             </Reveal>
           ))}
         </div>
+        <p className="mx-auto mt-6 max-w-3xl text-center text-xs text-navy/50">
+          表示価格のほかに追加費用はかかりません（デモ設定）。プランは問診のあと、医師の確認を経て決定します。
+        </p>
       </div>
     </section>
   );

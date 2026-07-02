@@ -21,9 +21,12 @@ export function FinalCta() {
               </p>
               <div className="mt-8 flex justify-center">
                 <ButtonLink href="/consultation" size="lg">
-                  無料で問診を始める
+                  無料で問診を始める（約3分）
                 </ButtonLink>
               </div>
+              <p className="mt-4 text-xs text-white/60">
+                匿名OK・途中でやめてもOK・定期プランはいつでも解約できます
+              </p>
             </div>
           </div>
         </Reveal>

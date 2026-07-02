@@ -149,7 +149,7 @@ export function ConsultationWizard() {
             onClick={handleNext}
             className={!proceedable ? "opacity-60" : ""}
           >
-            {isLast ? "この内容で受け付ける" : "次へ"}
+            {step === 0 ? "無料で始める" : isLast ? "この内容で受け付ける" : "次へ"}
             {!isLast && <ArrowRight className="h-4 w-4" />}
           </Button>
         </div>

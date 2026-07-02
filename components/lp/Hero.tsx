@@ -36,12 +36,18 @@ export function Hero() {
             人目や通院の手間を気にすることなく、医師に相談するための最初の一歩を、
             落ち着いた環境で踏み出せます。医師があなたに合った内容をご提案します。
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <ButtonLink href="/consultation" size="lg">
-              無料で問診を始める
+          <p className="mt-5 inline-flex items-baseline gap-2 rounded-xl bg-white px-4 py-2.5 shadow-card">
+            <span className="text-xs font-bold text-navy/60">初回</span>
+            <span className="text-2xl font-black text-navy">9,000</span>
+            <span className="text-sm font-bold text-navy">円（税込）</span>
+            <span className="text-[11px] text-navy/50">※デモ価格・問診は無料</span>
+          </p>
+          <div className="mt-6 flex flex-col gap-3">
+            <ButtonLink href="/consultation" size="lg" className="sm:self-start">
+              無料で問診を始める（約3分）
             </ButtonLink>
             <p className="text-xs text-navy/50">
-              ※ 入力内容で料金は発生しません（デモ）
+              匿名OK・途中でやめてもOK・入力内容で料金は発生しません（デモ）
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">

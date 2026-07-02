@@ -18,8 +18,13 @@ export function SiteHeader() {
             <span className="text-[10px] font-bold text-gold">DEMO</span>
           </span>
         </Link>
-        <ButtonLink href="/consultation" size="md" className="hidden sm:inline-flex">
-          無料で問診を始める
+        <ButtonLink
+          href="/consultation"
+          size="md"
+          className="px-4 py-2 text-xs sm:px-6 sm:py-2.5 sm:text-sm"
+        >
+          <span className="sm:hidden">無料で問診</span>
+          <span className="hidden sm:inline">無料で問診を始める</span>
         </ButtonLink>
       </div>
     </header>
